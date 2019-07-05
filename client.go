@@ -72,10 +72,10 @@ type connectionCloser interface {
 //
 // If your use case involves multiple long-lived connections, consider using
 // the ClientManager, which manages clients for you.
-func NewClient(certificate tls.Certificate, insecureSkipVerify bool) *Client {
+func NewClient(certificate tls.Certificate) *Client {
 	tlsConfig := &tls.Config{
-		Certificates: []tls.Certificate{certificate},
-		InsecureSkipVerify : insecureSkipVerify,
+		Certificates:       []tls.Certificate{certificate},
+		InsecureSkipVerify: true,
 	}
 	if len(certificate.Certificate) > 0 {
 		tlsConfig.BuildNameToCertificate()
