@@ -8,13 +8,12 @@ import (
 	"crypto/tls"
 	"encoding/json"
 	"fmt"
+	"github.com/luyongshou/apns2/token"
+	"golang.org/x/net/http2"
 	"io"
 	"net"
 	"net/http"
 	"time"
-
-	"github.com/sideshow/apns2/token"
-	"golang.org/x/net/http2"
 )
 
 // Apple HTTP/2 Development & Production urls
